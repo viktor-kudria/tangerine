@@ -1,6 +1,6 @@
 using System;
 
-namespace ArticleCms.Web.Models
+namespace Tangerine.Web.Models
 {
     public class ErrorViewModel
     {

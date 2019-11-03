@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ArticleCms.Web.Models;
+using Tangerine.Web.Models;
 
-namespace ArticleCms.Web.Controllers
+namespace Tangerine.Web.Controllers
 {
     public class HomeController : Controller
     {

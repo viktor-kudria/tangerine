@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCms.Web", "src\ArticleCms.Web\ArticleCms.Web.csproj", "{0D60AF96-89A5-42EF-819E-9FCE27859F07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangerine.Web", "src\Tangerine.Web\Tangerine.Web.csproj", "{0D60AF96-89A5-42EF-819E-9FCE27859F07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

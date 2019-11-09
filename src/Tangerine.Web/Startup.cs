@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tangerine.Data;
 
 namespace Tangerine.Web
 {
@@ -26,6 +29,17 @@ namespace Tangerine.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            string connectionString = "server=localhost;UserId=root;Password=rootpwd;database=tangerine;";
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseMySQL(connectionString);
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString("/auth/login");
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -47,6 +61,7 @@ namespace Tangerine.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

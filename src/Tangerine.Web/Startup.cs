@@ -29,7 +29,7 @@ namespace Tangerine.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            string connectionString = "server=localhost;UserId=root;Password=rootpwd;database=tangerine;";
+            string connectionString = "server=localhost;UserId=root;Password=rootpassword;database=tangerine;";
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseMySQL(connectionString);

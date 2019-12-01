@@ -4,7 +4,7 @@ services:
     image: mysql:8.0.18
     restart: always
     environment:
-      - "MYSQL_ROOT_PASSWORD=rootpwd"
+      - "MYSQL_ROOT_PASSWORD=rootpassword"
       - "MYSQL_DATABASE=tangerine"
     ports:
       - "3306:3306"
